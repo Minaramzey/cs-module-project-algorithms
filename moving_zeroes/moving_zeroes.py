@@ -5,7 +5,16 @@ Returns: a List of integers
 def moving_zeroes(arr):
     # Your code here
 
-    pass
+    i = 0
+    end = len(arr) - 1
+    while i < end:
+        if arr[i] == 0:
+            arr.append(arr[i])
+            del arr[i]
+            end -= 1
+        else:
+            i += 1
+    return arr
 
 
 if __name__ == '__main__':
