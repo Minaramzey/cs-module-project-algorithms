@@ -3,9 +3,21 @@
 import sys
 
 def rock_paper_scissors(n):
-  # Your code here
+    hands = [ 'rock', 'paper', 'scissors']
+    # Your code here
+    def rps(options, n):
+      if n == 0:
+        return [[]]
+      else:
+        options = rps(options, n-1)
+        new_options = []
+      for h in hands:
+        for o in options:
+          new_options.append(o+[h])
+      return new_options
+    
+    return rps([],n)
 
-  pass
 
 
 if __name__ == "__main__":
